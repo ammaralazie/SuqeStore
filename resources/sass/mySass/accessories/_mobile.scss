@@ -1,0 +1,19 @@
+@mixin ipad780 {
+    @media screen and (max-width:780px){
+        @content
+    };
+}/* /ipad780 */
+
+
+@mixin mob418 {
+    @media screen and (max-width:418px){
+        @content
+    };
+}/* /mob418 */
+
+
+@mixin mob380 {
+    @media screen and (max-width:380px) {
+        @content
+    };
+} /* /mob380 */

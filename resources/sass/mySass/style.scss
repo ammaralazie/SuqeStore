@@ -1,0 +1,267 @@
+@import './accessories/main';
+@import './accessories/fontStyle';
+@import './accessories/mobile';
+
+
+/* flx */
+%flx{
+    display: flex;
+    align-items: center;
+}
+/* /flx */
+
+/* navbar */
+#navbar{
+    width: 100%;
+    height: 50px;
+    @extend %flx;
+    justify-content: space-between;
+    padding: 8px;
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(0,0,0,.7);
+    &.in{
+        background-color:$ye ;
+        box-shadow: 0px 2px 5px -1px $dr ;
+    }
+
+    /* logo */
+    .logo{
+        font-size: 25px;
+        text-transform: capitalize;
+        background: linear-gradient(to top right,$pu,$ye,$dr);
+       -webkit-background-clip: text ;
+        -webkit-text-fill-color: transparent;
+        cursor: pointer;
+
+        &:hover{
+           transform: scale(1.04);
+           transition: all .3s ease;
+        }
+
+
+        @include ipad780{
+            font-size: 23px;
+        }
+        @include mob418{
+            font-size: 20px;
+        }
+    }
+    /* /logo */
+
+    /* menuList */
+    .menuList{
+        height: 100%;
+        @extend %flx;
+        justify-content: center;
+        .list{
+            height: 100%;
+            padding: 3px;
+            word-spacing: -2px;
+            @extend %flx;
+            .item:not(:last-child){
+                margin-right: 8px;
+                position: relative;
+                &:hover{
+                    transform: scale(1.05);
+                    span{
+                        width: 90%;
+                        height: 2px;
+                        box-shadow: 0px -3px 15px 2px #e0cf51;
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    color: $pu;
+                }
+                span{
+                    position: absolute;
+                    border-radius: 8px;
+                    background: $ye;
+                    bottom: -4px;
+                    left: 2px;
+                    width: 0px;
+                    transition: width .3s cubic-bezier(0,-0.01, 0.48, 0.46);
+                }
+
+            }/* /item */
+
+            /* last-child of item */
+            .item:last-child{
+                cursor: pointer;
+                color: $ye;
+
+                button{
+                    position: relative;
+                    background: $pu;
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px;
+                    cursor: pointer;
+                    span{
+                        position: absolute;
+                        border-radius: 8px;
+                        background: $ye;
+                        bottom: 5px;
+                        left: 2px;
+                        height: 2px;
+                        width: 0px;
+                    }
+                    &:focus{
+                        color: $pu;
+                        background: transparent;
+                        span{
+                            width: 90%;
+                            transition: width .3s cubic-bezier(0,-0.01, 0.48, 0.46);
+                        }
+                    }
+                }
+            }
+        }/* /list */
+    }
+    /* /menuList */
+}/* /nav */
+
+main{
+    overflow: hidden;
+    /* backgroundUrl */
+.backgroundUrl{
+
+    height: 75vh;
+    @extend %flx;
+    position: relative;
+
+    /* timer-background */
+    .timer-background{
+        position:absolute;
+        width: 0px;
+        height: 4px;
+        background: rgb(224 207 81 / 36%);
+        transition: width 5s cubic-bezier(0.65, 0.65, 0.65, 0.65);
+        top: 50px;
+        z-index: 10;
+        &.active{
+            animation: timer 9s infinite;
+            animation-delay: 0s;
+        }
+    }
+    @keyframes timer {
+        from{ width: 0px;}
+        to{ width: 100%;}
+    }
+    /* /timer-background */
+
+    @keyframes circl {
+        from{
+            right: -1000px;
+        }to{
+            right: 0px;
+        }
+    }/* end of animation */
+
+    /* /cover-backgrounnd */
+    /* wepper-img */
+    .wepper-img{
+
+        height: 100%;
+        display: flex;
+        position: absolute;
+        .img-div{
+            position: relative;
+            width: 100vw;
+            height: 100%;
+            img{
+                position: absolute;
+                width:100vw;
+                height: 100%;
+
+            }/* /img */
+            .txt{
+                position: absolute;
+                top:50%;
+                left: 30%;
+                transform: translateX(-30%);
+                z-index: 3;
+                line-height: 35px;
+                font-weight: 700;
+                cursor: default;
+                word-wrap:break-word;
+                width: 350px;
+                &.active{
+                    animation-name: trans;
+                    animation-duration: 3s;
+                }
+                h1{
+                    color: $ye;
+                }
+                p{
+                    line-height: 15px;
+                    margin-left: 4px;
+                    color: rgb(45, 48, 48);
+                }
+
+                @keyframes trans {
+                    from{transform: translateX(50%);}
+                    to{transform: translateX(-30%);}
+                }
+
+            }/* /txt */
+        }/* /img-div */
+    }
+    /* /wepper-img */
+
+    /* buttons */
+    button{
+        position: fixed;
+        font-size: 30px;
+        color: $pu;
+        filter: opacity(.5);
+        background: transparent;
+        cursor: pointer;
+        &.leftBtn{
+            left: 5px;
+
+        }
+        &.rightBtn{
+            right: 5px;
+        }
+        &:hover{
+            filter: opacity(1);
+            transition: filter .3s ease;
+        }
+    }
+    /* /buttons */
+
+    /* pointerImage */
+    .pointerImage{
+        position: absolute;
+        @extend %flx;
+        width: 100vw;
+        bottom: 0px;
+        justify-content: center;
+        @for $i from 1 to 6 {
+            .point-#{$i}{
+                margin: 5px;
+                width: 15px;
+                height: 15px;
+                background: #d6d2d2;
+                border-radius: 10px;
+                cursor: pointer;
+                &:hover{
+                    transition: background .3s ease;
+                    background: #fff;
+                }
+                &.active{
+                    background-color: $pu;
+                }
+            }
+        }/* end of for loop */
+
+
+
+    }
+    /* /pointerImage */
+
+}
+/* /backgroundUrl */
+}/* /main */

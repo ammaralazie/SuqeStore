@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Auth::routes(["login"=>false,"register"=>false]);
+
+//this function only to call vue project
+Route::get('/',function(){
+    return view("mainPage");
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

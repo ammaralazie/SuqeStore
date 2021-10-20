@@ -78,15 +78,6 @@ class ProductController extends Controller
     }//end of create
 
 
-    public function select_fields(){
-
-        $product=DB::table('products')
-        ->select(DB::raw('sum(id) as sum_product,id'))
-        ->groupBy('id')
-        ->get();
-        return response()->json($product);
-    }//end of select_fields
-
 
     // public function store(Request $request)
     // {

@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300;1,500;1,600;1,700&display=swap");
+* {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* /ipad780 */
+/* /mob418 */
+/* /mob380 */
+/* flx */
+main .backgroundUrl .pointerImage, main .backgroundUrl, #navbar .menuList .list, #navbar .menuList, #navbar {
+  display: flex;
+  align-items: center;
+}
+
+/* /flx */
+/* navbar */
+#navbar {
+  width: 100%;
+  height: 50px;
+  justify-content: space-between;
+  padding: 8px;
+  position: fixed;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* logo */
+  /* /logo */
+  /* menuList */
+  /* /menuList */
+}
+#navbar.in {
+  background-color: #E0CF51;
+  box-shadow: 0px 2px 5px -1px #252525;
+}
+#navbar .logo {
+  font-size: 25px;
+  text-transform: capitalize;
+  background: linear-gradient(to top right, #7A67E0, #E0CF51, #252525);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+#navbar .logo:hover {
+  transform: scale(1.04);
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 780px) {
+  #navbar .logo {
+    font-size: 23px;
+  }
+}
+@media screen and (max-width: 418px) {
+  #navbar .logo {
+    font-size: 20px;
+  }
+}
+#navbar .menuList {
+  height: 100%;
+  justify-content: center;
+  /* /list */
+}
+#navbar .menuList .list {
+  height: 100%;
+  padding: 3px;
+  word-spacing: -2px;
+  /* /item */
+  /* last-child of item */
+}
+#navbar .menuList .list .item:not(:last-child) {
+  margin-right: 8px;
+  position: relative;
+}
+#navbar .menuList .list .item:not(:last-child):hover {
+  transform: scale(1.05);
+}
+#navbar .menuList .list .item:not(:last-child):hover span {
+  width: 90%;
+  height: 2px;
+  box-shadow: 0px -3px 15px 2px #e0cf51;
+}
+#navbar .menuList .list .item:not(:last-child) a {
+  text-decoration: none;
+  color: #7A67E0;
+}
+#navbar .menuList .list .item:not(:last-child) span {
+  position: absolute;
+  border-radius: 8px;
+  background: #E0CF51;
+  bottom: -4px;
+  left: 2px;
+  width: 0px;
+  transition: width 0.3s cubic-bezier(0, -0.01, 0.48, 0.46);
+}
+#navbar .menuList .list .item:last-child {
+  cursor: pointer;
+  color: #E0CF51;
+}
+#navbar .menuList .list .item:last-child button {
+  position: relative;
+  background: #7A67E0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+#navbar .menuList .list .item:last-child button span {
+  position: absolute;
+  border-radius: 8px;
+  background: #E0CF51;
+  bottom: 5px;
+  left: 2px;
+  height: 2px;
+  width: 0px;
+}
+#navbar .menuList .list .item:last-child button:focus {
+  color: #7A67E0;
+  background: transparent;
+}
+#navbar .menuList .list .item:last-child button:focus span {
+  width: 90%;
+  transition: width 0.3s cubic-bezier(0, -0.01, 0.48, 0.46);
+}
+
+/* /nav */
+main {
+  overflow: hidden;
+  /* backgroundUrl */
+  /* /backgroundUrl */
+}
+main .backgroundUrl {
+  height: 75vh;
+  position: relative;
+  /* timer-background */
+  /* /timer-background */
+  /* end of animation */
+  /* /cover-backgrounnd */
+  /* wepper-img */
+  /* /wepper-img */
+  /* buttons */
+  /* /buttons */
+  /* pointerImage */
+  /* /pointerImage */
+}
+main .backgroundUrl .timer-background {
+  position: absolute;
+  width: 0px;
+  height: 4px;
+  background: rgba(224, 207, 81, 0.36);
+  transition: width 5s cubic-bezier(0.65, 0.65, 0.65, 0.65);
+  top: 50px;
+  z-index: 10;
+}
+main .backgroundUrl .timer-background.active {
+  animation: timer 9s infinite;
+  animation-delay: 0s;
+}
+@keyframes timer {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes circl {
+  from {
+    right: -1000px;
+  }
+  to {
+    right: 0px;
+  }
+}
+main .backgroundUrl .wepper-img {
+  height: 100%;
+  display: flex;
+  position: absolute;
+  /* /img-div */
+}
+main .backgroundUrl .wepper-img .img-div {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  /* /img */
+  /* /txt */
+}
+main .backgroundUrl .wepper-img .img-div img {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+}
+main .backgroundUrl .wepper-img .img-div .txt {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translateX(-30%);
+  z-index: 3;
+  line-height: 35px;
+  font-weight: 700;
+  cursor: default;
+  word-wrap: break-word;
+  width: 350px;
+}
+main .backgroundUrl .wepper-img .img-div .txt.active {
+  animation-name: trans;
+  animation-duration: 3s;
+}
+main .backgroundUrl .wepper-img .img-div .txt h1 {
+  color: #E0CF51;
+}
+main .backgroundUrl .wepper-img .img-div .txt p {
+  line-height: 15px;
+  margin-left: 4px;
+  color: #2d3030;
+}
+@keyframes trans {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(-30%);
+  }
+}
+main .backgroundUrl button {
+  position: fixed;
+  font-size: 30px;
+  color: #7A67E0;
+  filter: opacity(0.5);
+  background: transparent;
+  cursor: pointer;
+}
+main .backgroundUrl button.leftBtn {
+  left: 5px;
+}
+main .backgroundUrl button.rightBtn {
+  right: 5px;
+}
+main .backgroundUrl button:hover {
+  filter: opacity(1);
+  transition: filter 0.3s ease;
+}
+main .backgroundUrl .pointerImage {
+  position: absolute;
+  width: 100vw;
+  bottom: 0px;
+  justify-content: center;
+  /* end of for loop */
+}
+main .backgroundUrl .pointerImage .point-1 {
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+  background: #d6d2d2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+main .backgroundUrl .pointerImage .point-1:hover {
+  transition: background 0.3s ease;
+  background: #fff;
+}
+main .backgroundUrl .pointerImage .point-1.active {
+  background-color: #7A67E0;
+}
+main .backgroundUrl .pointerImage .point-2 {
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+  background: #d6d2d2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+main .backgroundUrl .pointerImage .point-2:hover {
+  transition: background 0.3s ease;
+  background: #fff;
+}
+main .backgroundUrl .pointerImage .point-2.active {
+  background-color: #7A67E0;
+}
+main .backgroundUrl .pointerImage .point-3 {
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+  background: #d6d2d2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+main .backgroundUrl .pointerImage .point-3:hover {
+  transition: background 0.3s ease;
+  background: #fff;
+}
+main .backgroundUrl .pointerImage .point-3.active {
+  background-color: #7A67E0;
+}
+main .backgroundUrl .pointerImage .point-4 {
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+  background: #d6d2d2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+main .backgroundUrl .pointerImage .point-4:hover {
+  transition: background 0.3s ease;
+  background: #fff;
+}
+main .backgroundUrl .pointerImage .point-4.active {
+  background-color: #7A67E0;
+}
+main .backgroundUrl .pointerImage .point-5 {
+  margin: 5px;
+  width: 15px;
+  height: 15px;
+  background: #d6d2d2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+main .backgroundUrl .pointerImage .point-5:hover {
+  transition: background 0.3s ease;
+  background: #fff;
+}
+main .backgroundUrl .pointerImage .point-5.active {
+  background-color: #7A67E0;
+}
+
+/* /main */
+
+/*# sourceMappingURL=style.css.map */
